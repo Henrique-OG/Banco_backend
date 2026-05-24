@@ -1,7 +1,7 @@
 import sqlite3
 
 def criar_tabela():
-    conexao = sqlite3.connect('dados.db')
+    conexao = sqlite3.connect('database/dados.db')
     cursor = conexao.cursor()
 
     criar_tabela_de_usuarios = """CREATE TABLE IF NOT EXISTS usuario (
