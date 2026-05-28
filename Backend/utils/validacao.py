@@ -27,19 +27,35 @@ def validar_email(email):
         email = input('Digite um email valido: ')
     return email
 
-def validar_senha(id,senha):
+def validar_senha(id, senha ):
     conexao = sqlite3.connect('database/dados.db')
     cursor = conexao.cursor()
 
-    senha = criptografar_senha(senha)
-
-    cursor.execute('''SELECT senha FROM usuario WHERE id = ?''', (id,))
+    cursor.execute('SELECT senha FROM usuario WHERE id = ?', (id,))
     senha_original = cursor.fetchone()
 
-    print(senha_original[0])
-    print(senha)
+    senha = criptografar_senha(senha)
 
-    if senha == senha_original[0]:
-        print('Senha valida!')
-    else :
-        print('Senha invalida!')
+    try:
+        senha_original = senha_original[0]
+    except TypeError:
+        print('Erro ao acessar conta, id invalido')
+    else:
+        tentativas = 0
+        if senha != senha_original:
+            print('Senha incorreta')
+            while tentativas < 3:
+                senha = (input('Digite sua senha: ')).strip()
+                senha = criptografar_senha(senha)
+                if senha_original == senha:
+                    return 'CORRETO'
+                tentativas += 1
+                if senha_original != senha:
+                    print('Senha incorreta!')
+                if tentativas == 3:
+                    print('tentativas maximas')
+                    return 'INCORRETO'
+        else:
+            return 'CORRETO'
+
+        conexao.close()

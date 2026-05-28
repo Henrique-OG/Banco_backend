@@ -3,6 +3,7 @@ from utils.validacao import *
 from rich.table import Table
 from rich.console import Console
 from utils.interface import *
+from rich import print
 
 class Banco:
 
@@ -44,3 +45,9 @@ class Banco:
         console = Console()
         console.print(tabela)
         conexao.close()
+
+    def acessar_conta(self, id):
+
+        acesso = validar_senha(id, input('digite sua senha: '))
+
+        return acesso
