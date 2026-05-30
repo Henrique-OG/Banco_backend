@@ -27,6 +27,12 @@ def validar_email(email):
         email = input('Digite um email valido: ')
     return email
 
+def validar_numero_float(numero):
+    numero = str(numero)
+    while numero.replace('.','').isnumeric() == False:
+        numero = input('Digite um valor valido: ')
+    return float(numero)
+
 def validar_senha(id, senha ):
     conexao = sqlite3.connect('database/dados.db')
     cursor = conexao.cursor()

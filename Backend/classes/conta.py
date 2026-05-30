@@ -13,7 +13,8 @@ class Banco:
 
         nome = input('Digite seu nome: ').strip().title()
         email = validar_email(input('Digite seu email: ').strip().lower())
-        senha = criptografar_senha(input('Digite sua senha: '))
+        senha = input('Digite sua senha: ')
+        senha = criptografar_senha(senha)
 
         try:
             cursor.execute('''INSERT INTO usuario (nome, email, senha) VALUES (?, ?, ?)''', (nome, email, senha))
