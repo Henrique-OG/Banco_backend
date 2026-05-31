@@ -22,7 +22,8 @@ def menu_do_usuario():
 2 - Realizar depósito
 3 - Realizar saque
 4 - Realizar transferencia
-5 - Mudar senha
-6 - Encerrar seção
-7 - Excluir conta''')
+5 - Verificar hitórico de \n    transferencia
+6 - Mudar senha
+7 - Encerrar seção
+8 - Excluir conta''')
     linha()

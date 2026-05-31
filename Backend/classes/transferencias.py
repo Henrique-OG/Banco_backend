@@ -1,4 +1,6 @@
 import sqlite3
+from rich.console import Console
+from rich.table import Table
 
 from utils.validacao import validar_numero_float, validar_senha
 
@@ -84,4 +86,22 @@ class Transferencias:
                     else:
                         print('Falha ao realizar transferencia')
                     conexao.close()
+
+    def verificar_transferencia(self):
+        conexao = sqlite3.connect('database/dados.db')
+        cursor = conexao.cursor()
+
+        tabela = Table()
+        tabela.add_column('id', justify='center')
+        tabela.add_column('Valor', justify='center')
+        tabela.add_column('Tipo de transferência', justify='left')
+
+        cursor.execute("""SELECT id, valor, tipo_de_transferencia FROM transferencia WHERE id_usuario = ?""", self.__id)
+        for transferencia in cursor.fetchall():
+            id, valor, tipo_de_transferencia = transferencia
+            tabela.add_row(f'{id}', f'{valor}', f'{tipo_de_transferencia}')
+
+        conexao.close()
+        console = Console()
+        console.print(tabela)
 

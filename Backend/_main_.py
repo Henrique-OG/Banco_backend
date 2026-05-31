@@ -48,15 +48,18 @@ while True:
                     if validar == 'INCORRETO':
                         break
                 elif escolha_do_usuario == 5:
+                    transferencais.verificar_transferencia()
+                    sleep(2)
+                elif escolha_do_usuario == 6:
                     sleep(0.5)
                     validar_seguranca = usuario.mudar_senha()
                     if validar_seguranca == 'INCORRETO':
                         break
-                elif escolha_do_usuario == 7:
+                elif escolha_do_usuario == 8:
                     sleep(0.5)
                     usuario.excluir_conta()
                     break
-                elif escolha_do_usuario == 6:
+                elif escolha_do_usuario == 7:
                     break
 
 
