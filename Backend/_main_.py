@@ -33,7 +33,7 @@ while True:
             transferencais = Transferencias(id)
             while True:
                 menu_do_usuario()
-                escolha_do_usuario = validar_escolha(input('Digite sua escolha: '), 7)
+                escolha_do_usuario = validar_escolha(input('Digite sua escolha: '), 8)
                 if escolha_do_usuario == 1:
                     sleep(0.5)
                     usuario.verificar_saldo()

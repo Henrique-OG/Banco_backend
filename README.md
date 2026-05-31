@@ -4,7 +4,7 @@
 
 Sistema bancário desenvolvido em python para treinar conceitos de backend, banco de dados e orientação a objetos. O sistema permite a criação de novos usuários, ver a lista de pessoas cadastradas, acessar conta, verificar saldo, realizar transferências, saques e depositos, mudar senha e excluir conta.
 
-## Tecnoligias 
+## Tecnologias 
 
 - Python 3
 - SQLite3
