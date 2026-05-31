@@ -1,16 +1,16 @@
 # Banco_backend
 
-# Descrição
+## Descrição
 
 Sistema bancário desenvolvido em python para treinar conceitos de backend, banco de dados e orientação a objetos. O sistema permite a criação de novos usuários, ver a lista de pessoas cadastradas, acessar conta, verificar saldo, realizar transferências, saques e depositos, mudar senha e excluir conta.
 
-# Tecnoligias 
+## Tecnoligias 
 
 - Python 3
 - SQLite3
 - hashlib
 
-# Funcionalidades 
+## Funcionalidades 
 
 - Cadastro de usuários
 - Ver lista de pessoas cadastradas 
@@ -22,7 +22,7 @@ Sistema bancário desenvolvido em python para treinar conceitos de backend, banc
 - Mudar senha
 - Exclusão de contas
 
-# Estrutura do Projeto
+## Estrutura do Projeto
 
 Banco_backend/
 │
@@ -46,7 +46,7 @@ Execute:
 
 python __main__.py
 
-# Objetivo
+## Objetivo
 
 Projeto criado para praticar:
 
@@ -58,7 +58,7 @@ Projeto criado para praticar:
 - JOIN
 - Modularização
 
-# Futuras melhorias
+## Futuras melhorias
 
 - Interface gráfica
 - Flask
